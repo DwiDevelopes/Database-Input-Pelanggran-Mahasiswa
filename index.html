@@ -9,10 +9,11 @@
     <link rel="stylesheet" href="css/animated.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <link rel="icon" type="image/x-icon" href="img/ROY Dwi.jpg">
 </head>
 <body>
     <div class="container">
-        <h1 class="animate__animated animate__backInDown">Input Data Pelanggaran</h1>
+        <h1 class="animate__animated animate__backInDown"><img src="img/ROY Dwi.ico" alt="Logo Dwi Bakti N. Dev" width="50" height="50"></h1>
         <form id="pelanggaranForm" action="https://script.google.com/macros/s/AKfycbw2zhKXx3QVPsUIFqQDtEYHftmX8NFxKYrHgi54fUiI24GPQ79KI0NrmfmKQR7UVpub3A/exec" method="POST">
           <div class="form-group">
             <label class="animate__animated animate__fadeInDown" for="nama">Nama :</label>
@@ -51,15 +52,17 @@
             <textarea class="animate__animated animate__fadeInDown" id="sanksi" name="sanksi" rows="4" required placeholder="Masukkan sanksi yang diberikan"></textarea>
           </div>
           <button class="animate__animated animate__backInUp" type="submit">Submit</button>
+          <h4></h4>
+          <button class="animate__animated animate__backInUp" type="reset">Reset</button>
+          <center><p class ="animate__animated animate__backInUp" style = "font-size:12px;" >Copyright © 2022 Dwi Bakti N. Dev</p></center>
         </form>
       </div>
 
     <script>
-        // Event listener for form submission
+      music_play = new Audio ("sound/sound.mp3");
         document.getElementById('pelanggaranForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-
-            // Show SweetAlert success notification
+            event.preventDefault(); 
+            music_play.play();
             Swal.fire({
                 title: 'Berhasil!',
                 text: 'Data pelanggaran telah berhasil dikirim.',
@@ -72,14 +75,13 @@
 
                     // Perform AJAX request to submit the form data
                     $.ajax({
-                        url: event.target.action, // Use form action URL
+                        url: event.target.action,
                         type: 'POST',
                         data: formData,
                         contentType: false,
                         processData: false,
                         success: function(response) {
                             console.log('Data successfully submitted to Google Sheets.');
-                            // Optionally, you can add another SweetAlert for success submission
                         },
                         error: function(xhr, status, error) {
                             console.error('Failed to submit data:', error);

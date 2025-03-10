@@ -26,6 +26,17 @@ Aplikasi ini digunakan untuk mengambil data mahasiswa dari Google Sheets. Aplika
 13. Klik tombol "Merge pull request".
 14. Buka Google Sheets dan cek data mahasiswa yang telah ditambahkan.
 
+
+## Screenshot
+
+<img src="asset/1.png" alt="Screenshot Data Mahasiswa" width="200">
+<img src="asset/2.png" alt="Screenshot Data Mahasiswa" width="200">
+<img src="asset/3.png" alt="Screenshot Data Mahasiswa" width="200">
+<img src="asset/.png" alt="Screenshot Data Mahasiswa" width="200">
+
+
+
+
 ## Kontribusi
 
 Jika Anda ingin berkontribusi, Anda dapat mengirimkan pull request ke repositori ini.        
