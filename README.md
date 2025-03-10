@@ -1,4 +1,4 @@
-<img src="asset/.png" alt="Logo Data Mahasiswa" width="200">
+<img src="asset/.png" alt="Logo Data Mahasiswa">
 
 # Data Mahasiswa
 
