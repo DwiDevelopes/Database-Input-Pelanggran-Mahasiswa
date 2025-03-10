@@ -1,0 +1,45 @@
+const sheetName = 'Sheet1'; // Nama sheet di Google Sheets
+const scriptProp = PropertiesService.getScriptProperties();
+
+function initialSetup() {
+  const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  scriptProp.setProperty('key', activeSpreadsheet.getId()); // Simpan ID spreadsheet
+}
+
+function doPost(e) {
+  const lock = LockService.getScriptLock();
+  lock.tryLock(10000); // Coba kunci script selama 10 detik
+
+  try {
+    const doc = SpreadsheetApp.openById(scriptProp.getProperty('key')); // Buka spreadsheet
+    const sheet = doc.getSheetByName(sheetName); // Buka sheet berdasarkan nama
+
+    // Ambil header dari baris pertama
+    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0];
+    const nextRow = sheet.getLastRow() + 1; // Tentukan baris berikutnya
+
+    // Map header ke parameter yang dikirim dalam permintaan POST
+    const newRow = headers.map(function(header) {
+      // Konversi header ke lowercase dan ganti spasi dengan underscore
+      const paramName = header.toLowerCase().replace(/ /g, '_');
+      
+      // Pastikan e.parameter memiliki nilai yang sesuai
+      return e.parameter[paramName] || ''; // Ambil nilai dari parameter atau gunakan string kosong
+    });
+
+    // Masukkan baris baru ke dalam sheet
+    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow]);
+
+    // Berikan respons JSON bahwa data berhasil disimpan
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: 'success', row: nextRow }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } catch (e) {
+    // Berikan respons JSON jika terjadi error
+    return ContentService
+      .createTextOutput(JSON.stringify({ result: 'error', error: e.message }))
+      .setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    lock.releaseLock(); // Lepaskan kunci
+  }
+}

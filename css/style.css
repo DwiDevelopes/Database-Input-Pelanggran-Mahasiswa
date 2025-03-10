@@ -1,0 +1,143 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+}
+
+/* Hides the scrollbar */
+::-webkit-scrollbar {
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    display: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    display: none;
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 15px;
+        max-width: 100%; /* Ensure container takes full width on smaller screens */
+        margin: 0 auto;
+    }
+
+    h1 {
+        font-size: 24px; /* Adjust the size of the heading */
+    }
+
+    label {
+        font-size: 14px; /* Adjust label size for smaller screens */
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    textarea {
+        font-size: 14px; /* Make input text slightly smaller */
+    }
+
+    button {
+        font-size: 14px; /* Adjust button text size */
+        padding: 12px; /* Make button bigger for easier click on mobile */
+    }
+}
+
+/* Media Query for Smaller Mobile Screens */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px; /* Smaller heading on very small screens */
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+    label {
+        font-size: 13px; /* Even smaller label for ultra-mobile screens */
+    }
+
+    input[type="text"],
+    input[type="number"],
+    input[type="date"],
+    textarea {
+        font-size: 13px; /* Adjust input font size */
+    }
+
+    button {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
