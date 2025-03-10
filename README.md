@@ -29,10 +29,13 @@ Aplikasi ini digunakan untuk mengambil data mahasiswa dari Google Sheets. Aplika
 
 ## Screenshot
 
-<img src="asset/1.png" alt="Screenshot Data Mahasiswa" width="200">
-<img src="asset/2.png" alt="Screenshot Data Mahasiswa" width="200">
-<img src="asset/3.png" alt="Screenshot Data Mahasiswa" width="200">
-<img src="asset/.png" alt="Screenshot Data Mahasiswa" width="200">
+<img src="asset/1.png" alt="Screenshot Data Mahasiswa">
+<p></p>
+<img src="asset/2.png" alt="Screenshot Data Mahasiswa">
+<p></p>
+<img src="asset/3.png" alt="Screenshot Data Mahasiswa">
+<p></p>
+<img src="asset/.png" alt="Screenshot Data Mahasiswa">
 
 
 
